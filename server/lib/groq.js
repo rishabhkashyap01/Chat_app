@@ -22,9 +22,9 @@ export const classifyMessageWithGroq = async (text) => {
                     content: `Classify this message: "${text}"`
                 }
             ],
-            model: "meta-llama/llama-4-scout-17b-16e-instruct",
+            model: "openai/gpt-oss-safeguard-20b",
             temperature: 0,
-            max_tokens: 5,
+            max_tokens: 80,
         });
 
         const classification = chatCompletion.choices[0]?.message?.content.trim().toUpperCase() || 'SAFE';
